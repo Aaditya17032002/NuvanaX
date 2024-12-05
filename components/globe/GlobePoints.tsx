@@ -6,9 +6,10 @@ import { useFrame } from '@react-three/fiber'
 import { Color } from 'three'
 import { generateGlobePoints } from '@/lib/globe-utils'
 import { useMouseMovement } from '@/hooks/use-mouse-movement'
+import * as THREE from "three";
 
 export default function GlobePoints() {
-  const pointsRef = useRef<any>()
+  const pointsRef = useRef<THREE.Points | null>(null);
   const points = useMemo(() => generateGlobePoints(1000), [])
   const mouseMovement = useMouseMovement(0.15)
   

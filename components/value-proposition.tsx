@@ -1,6 +1,6 @@
 "use client"
 
-import { motion, useScroll, useTransform } from "framer-motion"
+import { motion } from "framer-motion"
 import { useRef } from "react"
 import { useInView } from "react-intersection-observer"
 import Image from "next/image"
@@ -36,12 +36,7 @@ const benefits = [
 
 export function ValueProposition() {
   const containerRef = useRef<HTMLDivElement>(null)
-  const { scrollYProgress } = useScroll({
-    target: containerRef,
-    offset: ["start end", "end start"],
-  })
 
-  const y = useTransform(scrollYProgress, [0, 1], [100, -100])
   const [ref, inView] = useInView({
     triggerOnce: true,
     threshold: 0.1,

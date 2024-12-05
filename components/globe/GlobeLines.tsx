@@ -5,9 +5,11 @@ import { Line } from '@react-three/drei'
 import { useFrame } from '@react-three/fiber'
 import { generateGlobeLines } from '@/lib/globe-utils'
 import { useMouseMovement } from '@/hooks/use-mouse-movement'
+import * as THREE from "three"
 
 export default function GlobeLines() {
-  const linesRef = useRef<any>()
+  // Use THREE.Group instead of THREE.Line for the group reference
+  const linesRef = useRef<THREE.Group>(null!)
   const lines = useMemo(() => generateGlobeLines(30), [])
   const mouseMovement = useMouseMovement(0.15)
   

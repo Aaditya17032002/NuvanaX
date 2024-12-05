@@ -1,10 +1,10 @@
 import { Vector3 } from 'three'
 
-const memoizedData = new Map<string, any>()
+const memoizedData = new Map<string, Float32Array | Vector3[][]>()
 
 export function generateGlobePoints(count: number): Float32Array {
   const key = `points-${count}`
-  if (memoizedData.has(key)) return memoizedData.get(key)
+  if (memoizedData.has(key)) return memoizedData.get(key) as Float32Array
 
   const points = new Float32Array(count * 3)
   const radius = 2
@@ -24,7 +24,7 @@ export function generateGlobePoints(count: number): Float32Array {
 
 export function generateGlobeLines(count: number): Vector3[][] {
   const key = `lines-${count}`
-  if (memoizedData.has(key)) return memoizedData.get(key)
+  if (memoizedData.has(key)) return memoizedData.get(key) as Vector3[][]
 
   const lines: Vector3[][] = []
   const radius = 2
@@ -55,7 +55,7 @@ export function generateGlobeLines(count: number): Vector3[][] {
 
 export function generateParticles(count: number): Float32Array {
   const key = `particles-${count}`
-  if (memoizedData.has(key)) return memoizedData.get(key)
+  if (memoizedData.has(key)) return memoizedData.get(key) as Float32Array
 
   const particles = new Float32Array(count * 3)
   const radius = 2.5
@@ -73,3 +73,4 @@ export function generateParticles(count: number): Float32Array {
   memoizedData.set(key, particles)
   return particles
 }
+

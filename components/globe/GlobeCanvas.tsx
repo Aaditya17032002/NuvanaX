@@ -23,13 +23,13 @@ export default function GlobeCanvas() {
           antialias: false,
           powerPreference: "high-performance",
           stencil: false,
-          depth: false
+          depth: true // Enable depth if necessary
         }}
       >
         <AdaptiveDpr pixelated />
         <AdaptiveEvents />
         <Preload all />
-        <Suspense fallback={null}>
+        <Suspense fallback={<div>Loading 3D Content...</div>}>
           <color attach="background" args={['#000B1F']} />
           <ambientLight intensity={0.1} />
           <pointLight position={[10, 10, 10]} intensity={0.8} />
