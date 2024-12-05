@@ -31,7 +31,7 @@ export function ContactSection() {
         >
           <div className="text-center mb-16">
             <h2 className="text-3xl md:text-4xl font-bold mb-4" id="customFeature">
-              We're Here to Help
+              We&apos;re Here to Help
             </h2>
             <p className="text-xl text-gray-600">
               Get in touch with us to learn more about how NuvanaX can help your

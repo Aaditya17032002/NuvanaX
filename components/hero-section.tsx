@@ -5,7 +5,6 @@ import { Button } from "@/components/ui/button"
 import { ArrowRight } from 'lucide-react'
 import dynamic from 'next/dynamic'
 import { Suspense } from 'react'
-import Image from 'next/image'
 
 const GlobeCanvas = dynamic(() => import('@/components/globe/GlobeCanvas'), {
   ssr: false,

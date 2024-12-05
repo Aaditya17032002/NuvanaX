@@ -1,10 +1,9 @@
 "use client"
 
-import { motion } from "framer-motion"
 import Link from "next/link"
 import { Input } from "@/components/ui/input"
 import { Button } from "@/components/ui/button"
-import { Twitter, Facebook, Linkedin, Instagram, Shield, Lock } from 'lucide-react'
+import { Twitter, Facebook, Linkedin, Instagram} from 'lucide-react'
 
 export function Footer() {
   return (
